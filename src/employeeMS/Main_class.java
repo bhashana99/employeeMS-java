@@ -25,7 +25,11 @@ public class Main_class extends JFrame {
         add.setBackground(Color.black);
         image2.add(add);
 
-       
+        JButton view = new JButton("View Employee");
+        view.setBounds(565,275,150,40);
+        view.setForeground(Color.WHITE);
+        view.setBackground(Color.black);
+        image2.add(view);
 
 
         setSize(1120,630);
