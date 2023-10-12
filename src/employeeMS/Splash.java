@@ -19,6 +19,13 @@ public class Splash extends JFrame {
         setLocation(200,50);
         setLayout(null);
         setVisible(true);
+
+        try{
+            Thread.sleep(5000);
+            setVisible(false);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
