@@ -7,7 +7,7 @@ public class Login extends JFrame {
 
     JTextField tusername;
     JPasswordField tpassword;
-    JButton login;
+    JButton login,back;
     Login(){
 //
         JLabel username = new JLabel("Username");
@@ -31,6 +31,12 @@ public class Login extends JFrame {
         login.setBackground(Color.black);
         login.setForeground(Color.WHITE);
         add(login);
+
+        back = new JButton("BACK");
+        back.setBounds(150,180,150,30);
+        back.setBackground(Color.black);
+        back.setForeground(Color.WHITE);
+        add(back);
 
         setSize(600,300);
         setLocation(450,200);
