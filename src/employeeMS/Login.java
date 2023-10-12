@@ -2,8 +2,10 @@ package employeeMS;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Login extends JFrame {
+public class Login extends JFrame implements ActionListener {
 
     JTextField tusername;
     JPasswordField tpassword;
@@ -60,6 +62,10 @@ public class Login extends JFrame {
         setVisible(true);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+    }
 
     public static void main(String[] args) {
         new Login();
