@@ -2,6 +2,8 @@ package employeeMS;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main_class extends JFrame {
 
@@ -23,13 +25,39 @@ public class Main_class extends JFrame {
         add.setBounds(335,275,150,40);
         add.setForeground(Color.WHITE);
         add.setBackground(Color.black);
+        add.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         image2.add(add);
 
         JButton view = new JButton("View Employee");
         view.setBounds(565,275,150,40);
         view.setForeground(Color.WHITE);
         view.setBackground(Color.black);
+
+        view.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         image2.add(view);
+
+        JButton remove = new JButton("Remove Employee");
+        remove.setBounds(440,375,150,40);
+        remove.setForeground(Color.WHITE);
+        remove.setBackground(Color.black);
+
+        remove.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        });
+        image2.add(remove);
 
 
         setSize(1120,630);
