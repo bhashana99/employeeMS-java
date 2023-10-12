@@ -68,6 +68,14 @@ public class Login extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource() == login){
+            try {
+                String username = tusername.getText();
+                String password = tpassword.getText();
+                
+
+            }catch (Exception E){
+                E.printStackTrace();
+            }
 
         } else if (e.getSource() == back) {
             System.exit(90);
