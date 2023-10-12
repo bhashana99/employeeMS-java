@@ -39,12 +39,20 @@ public class Login extends JFrame {
         back.setForeground(Color.WHITE);
         add(back);
 
+        ImageIcon i12 = new ImageIcon(ClassLoader.getSystemResource("icons/second.jpg"));
+        Image i22 = i12.getImage().getScaledInstance(600,400,Image.SCALE_DEFAULT);
+        ImageIcon i32 = new ImageIcon(i22);
+        JLabel image22 = new JLabel(i32);
+        image22.setBounds(350,0,600,400);
+        add(image22);
+
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/LoginB.jpg"));
         Image i2 = i1.getImage().getScaledInstance(600,300,Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel image2 = new JLabel(i3);
         image2.setBounds(0,0,600,300);
         add(image2);
+
 
         setSize(600,300);
         setLocation(450,200);
