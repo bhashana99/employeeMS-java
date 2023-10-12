@@ -33,12 +33,14 @@ public class Login extends JFrame implements ActionListener {
         login.setBounds(150,140,150,30);
         login.setBackground(Color.black);
         login.setForeground(Color.WHITE);
+        login.addActionListener(this);
         add(login);
 
         back = new JButton("BACK");
         back.setBounds(150,180,150,30);
         back.setBackground(Color.black);
         back.setForeground(Color.WHITE);
+        back.addActionListener(this);
         add(back);
 
         ImageIcon i12 = new ImageIcon(ClassLoader.getSystemResource("icons/second.jpg"));
@@ -64,7 +66,12 @@ public class Login extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
+        if(e.getSource() == login){
+            
+        } else if (e.getSource() == back) {
+            System.exit(90);
+        }
     }
 
     public static void main(String[] args) {
