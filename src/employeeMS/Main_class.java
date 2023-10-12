@@ -14,11 +14,25 @@ public class Main_class extends JFrame {
         image2.setBounds(0,0,1120,630);
         add(image2);
 
+        JLabel heading = new JLabel("Employee Management System");
+        heading.setBounds(340,155,400,40);
+        heading.setFont(new Font("Raleway",Font.BOLD,25));
+        image2.add(heading);
+
+        JButton add = new JButton("Add Employee");
+        add.setBounds(335,275,150,40);
+        add.setForeground(Color.WHITE);
+        add.setBackground(Color.black);
+        image2.add(add);
+
+       
+
 
         setSize(1120,630);
         setLocation(250,100);
         setLayout(null);
         setVisible(true);
+
     }
 
     public static void main(String[] args) {
