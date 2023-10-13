@@ -141,7 +141,27 @@ public class AddEmployee extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-   
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == add){
+            try{
+
+                String name = tname.getText();
+                String address = taddress.getText();
+                String phone = tphone.getText();
+                String email = temail.getText();
+                String salary = tsalary.getText();
+                String nic = tnic.getText();
+                String dob = ((JTextField) tdob.getDateEditor().getUiComponent()).getText();
+                String education = (String) Boxeducation.getSelectedItem();
+                String empId = tempid.getText();
+
+
+            }catch (Exception E){
+                E.printStackTrace();
+            }
+        }
+    }
 
     public static void main(String[] args) {
             new AddEmployee();
