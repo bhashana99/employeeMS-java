@@ -126,12 +126,14 @@ public class AddEmployee extends JFrame implements ActionListener {
         add.setBounds(250,530,150,30);
         add.setBackground(new Color(40,167,69));
         add.setForeground(Color.WHITE);
+        add.addActionListener(this);
         add(add);
 
         back = new JButton("Back");
         back.setBounds(550,530,150,30);
         back.setBackground(new Color(255,193,7));
         back.setForeground(Color.WHITE);
+        back.addActionListener(this);
         add(back);
 
 
@@ -142,24 +144,35 @@ public class AddEmployee extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == add){
+    public void actionPerformed(ActionEvent ex) {
+        if(ex.getSource() == add){
+
+            String name = tname.getText();
+            String address = taddress.getText();
+            String phone = tphone.getText();
+            String email = temail.getText();
+            String salary = tsalary.getText();
+            String nic = tnic.getText();
+            String dob = ((JTextField) tdob.getDateEditor().getUiComponent()).getText();
+            String education = (String) Boxeducation.getSelectedItem();
+            String empId = tempid.getText();
+
             try{
+                conn c = new conn();
 
-                String name = tname.getText();
-                String address = taddress.getText();
-                String phone = tphone.getText();
-                String email = temail.getText();
-                String salary = tsalary.getText();
-                String nic = tnic.getText();
-                String dob = ((JTextField) tdob.getDateEditor().getUiComponent()).getText();
-                String education = (String) Boxeducation.getSelectedItem();
-                String empId = tempid.getText();
-
+                String query = "INSERT INTO employee(empId,name,dob,salary,address,phone,email,education,nic) VALUES ('"+empId+"','"+name+"','"+dob+"','"+salary+"','"+address+"','"+phone+"','"+email+"','"+education+"','"+nic+"')";
+                c.stmt.executeUpdate(query);
+                JOptionPane.showMessageDialog(null,"Details added successfully");
+                setVisible(false);
+                new Main_class();
 
             }catch (Exception E){
                 E.printStackTrace();
             }
+        } else if (ex.getSource() == back) {
+            setVisible(false);
+            new Main_class();
+
         }
     }
 
