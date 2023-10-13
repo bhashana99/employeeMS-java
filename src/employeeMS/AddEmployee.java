@@ -4,12 +4,19 @@ import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Random;
 
 public class AddEmployee extends JFrame {
 
+    Random ram = new Random();
+    int number = ram.nextInt(999999);
+
     JTextField tname,taddress,tphone,temail,tsalary,tnic;
+    JLabel tempid;
     JDateChooser tdob;
     JComboBox Boxeducation;
+
+
 
     AddEmployee(){
         getContentPane().setBackground(new Color(163,255,188));
@@ -100,6 +107,17 @@ public class AddEmployee extends JFrame {
         tnic.setBounds(200,430,150,30);
         tnic.setBackground(new Color(177,252,197));
         add(tnic);
+
+        JLabel empid = new JLabel("Employee Id");
+        empid.setBounds(50,470,150,30);
+        empid.setFont(new Font("SAN_SERIF",Font.BOLD,20));
+        add(empid);
+
+        tempid = new JLabel(""+number);
+        tempid.setBounds(200,470,150,30);
+        tempid.setFont(new Font("SAN_SERIF",Font.BOLD,20));
+        tempid.setForeground(Color.red);
+        add(tempid);
 
 
         setSize(900,700);
