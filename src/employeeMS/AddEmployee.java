@@ -4,9 +4,11 @@ import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 
-public class AddEmployee extends JFrame {
+public class AddEmployee extends JFrame implements ActionListener {
 
     Random ram = new Random();
     int number = ram.nextInt(999999);
@@ -15,6 +17,7 @@ public class AddEmployee extends JFrame {
     JLabel tempid;
     JDateChooser tdob;
     JComboBox Boxeducation;
+    JButton add,back;
 
 
 
@@ -119,12 +122,26 @@ public class AddEmployee extends JFrame {
         tempid.setForeground(Color.red);
         add(tempid);
 
+        add = new JButton("ADD");
+        add.setBounds(250,530,150,30);
+        add.setBackground(new Color(40,167,69));
+        add.setForeground(Color.WHITE);
+        add(add);
+
+        back = new JButton("Back");
+        back.setBounds(550,530,150,30);
+        back.setBackground(new Color(255,193,7));
+        back.setForeground(Color.WHITE);
+        add(back);
+
 
         setSize(900,700);
         setLayout(null);
         setLocation(300,50);
         setVisible(true);
     }
+
+   
 
     public static void main(String[] args) {
             new AddEmployee();
