@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class AddEmployee extends JFrame {
 
-    JTextField tname,taddress,tphone,temail,tsalary;
+    JTextField tname,taddress,tphone,temail,tsalary,tnic;
     JDateChooser tdob;
     JComboBox Boxeducation;
 
@@ -90,6 +90,16 @@ public class AddEmployee extends JFrame {
         Boxeducation.setBackground(new Color(177,252,197));
         Boxeducation.setBounds(200,390,150,30);
         add(Boxeducation);
+
+        JLabel nic = new JLabel("NIC");
+        nic.setBounds(50,430,150,30);
+        nic.setFont(new Font("SAN_SERIF",Font.BOLD,20));
+        add(nic);
+
+        tnic = new JTextField();
+        tnic.setBounds(200,430,150,30);
+        tnic.setBackground(new Color(177,252,197));
+        add(tnic);
 
 
         setSize(900,700);
