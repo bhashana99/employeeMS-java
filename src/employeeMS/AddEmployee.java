@@ -1,6 +1,5 @@
 package employeeMS;
 
-import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
@@ -9,6 +8,7 @@ import java.awt.*;
 public class AddEmployee extends JFrame {
 
     JTextField tname,taddress,tphone,temail,tsalary;
+    JDateChooser tdob;
 
     AddEmployee(){
         getContentPane().setBackground(new Color(163,255,188));
@@ -67,7 +67,18 @@ public class AddEmployee extends JFrame {
         tsalary.setBounds(200,310,150,30);
         tsalary.setBackground(new Color(177,252,197));
         add(tsalary);
-        
+
+        JLabel dob = new JLabel("Date of Birth");
+        dob.setBounds(50,350,150,30);
+        dob.setFont(new Font("SAN_SERIF",Font.BOLD,20));
+        add(dob);
+
+        tdob = new JDateChooser();
+        tdob.setBounds(200,350,150,30);
+        tdob.setBackground(new Color(177,252,197));
+        add(tdob);
+
+
 
 
 
