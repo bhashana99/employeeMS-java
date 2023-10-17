@@ -124,6 +124,13 @@ public class UpdateEmployee extends JFrame implements ActionListener {
             ResultSet resultSet = c.stmt.executeQuery(query);
             while (resultSet.next()){
                 tname.setText(resultSet.getString("name"));
+                temail.setText(resultSet.getString("email"));
+                taddress.setText(resultSet.getString("address"));
+                tphone.setText(resultSet.getString("phone"));
+                tsalary.setText(resultSet.getString("salary"));
+                tdob.setText(resultSet.getString("dob"));
+                tnic.setText(resultSet.getString("nic"));
+                teducation.setText(resultSet.getString("education"));
             }
         }catch (Exception e){
             e.printStackTrace();
