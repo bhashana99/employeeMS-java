@@ -7,7 +7,11 @@ public class ViewEmployee extends JFrame {
 
     ViewEmployee(){
 
-        getContentPane().setBackground(new Color(50,120,200));
+        getContentPane().setBackground(new Color(230,230,230));
+
+        JLabel search = new JLabel("Search Employee By Id");
+        search.setBounds(20,20,150,20);
+        add(search);
 
         setSize(900,700);
         setLayout(null);
