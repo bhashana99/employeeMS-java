@@ -2,6 +2,8 @@ package employeeMS;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.sql.ResultSet;
 
 public class RemoveEmployee extends JFrame {
@@ -57,11 +59,11 @@ public class RemoveEmployee extends JFrame {
 
 
         try {
-
             conn c = new conn();
             String selectedEmpID = choiceEMPID.getSelectedItem();
             ResultSet resultSet = c.stmt.executeQuery("SELECT * FROM employee WHERE empId = '"+selectedEmpID+"' ");
-            System.out.println(choiceEMPID);
+//            System.out.println(choiceEMPID);
+
             while (resultSet.next()){
                 textName.setText(resultSet.getString("name"));
                 textEmail.setText(resultSet.getString("email"));
@@ -70,6 +72,26 @@ public class RemoveEmployee extends JFrame {
         }catch (Exception e){
             e.printStackTrace();
         }
+
+        choiceEMPID.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                try {
+                    conn c = new conn();
+                    String selectedEmpID = choiceEMPID.getSelectedItem();
+                    ResultSet resultSet = c.stmt.executeQuery("SELECT * FROM employee WHERE empId = '"+selectedEmpID+"' ");
+//            System.out.println(choiceEMPID);
+
+                    while (resultSet.next()){
+                        textName.setText(resultSet.getString("name"));
+                        textEmail.setText(resultSet.getString("email"));
+                        textPhone.setText(resultSet.getString("phone"));
+                    }
+                }catch (Exception E){
+                    E.printStackTrace();
+                }
+            }
+        });
 
         setSize(1000,400);
         setLocation(300,150);
