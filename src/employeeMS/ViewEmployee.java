@@ -50,7 +50,21 @@ public class ViewEmployee extends JFrame {
         jp.setBounds(0,100,900,600);
         add(jp);
 
-        JButton search = new JButton();
+        search = new JButton("Search");
+        search.setBounds(20,70,80,20);
+        add(search);
+
+        update = new JButton("Update");
+        update.setBounds(120,70,80,20);
+        add(update);
+
+        print = new JButton("Print");
+        print.setBounds(220,70,80,20);
+        add(print);
+
+        back = new JButton("Back");
+        back.setBounds(320,70,80,20);
+        add(back);
 
 
 
