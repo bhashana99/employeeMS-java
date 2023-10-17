@@ -5,7 +5,10 @@ import javax.swing.*;
 public class ViewEmployee extends JFrame {
 
     ViewEmployee(){
-
+        setSize(900,700);
+        setLayout(null);
+        setLocation(300,100);
+        setVisible(true);
         
     }
 
