@@ -4,9 +4,11 @@ import net.proteanit.sql.DbUtils;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
-public class ViewEmployee extends JFrame {
+public class ViewEmployee extends JFrame implements ActionListener {
     JButton search,print,update,back;
     Choice choiceEMP;
     JTable table;
@@ -72,6 +74,11 @@ public class ViewEmployee extends JFrame {
         setLayout(null);
         setLocation(300,100);
         setVisible(true);
+        
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
         
     }
 
