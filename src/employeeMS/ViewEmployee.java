@@ -69,6 +69,7 @@ public class ViewEmployee extends JFrame implements ActionListener {
 
         back = new JButton("Back");
         back.setBounds(320,70,80,20);
+        back.addActionListener(this);
         add(back);
 
 
