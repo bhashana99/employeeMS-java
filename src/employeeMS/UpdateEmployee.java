@@ -14,7 +14,7 @@ public class UpdateEmployee extends JFrame implements ActionListener {
     JButton add,back;
     String number;
 
-    UpdateEmployee(){
+    UpdateEmployee(String number){
 
         this.number = number;
 
@@ -117,6 +117,13 @@ public class UpdateEmployee extends JFrame implements ActionListener {
         tempid.setForeground(Color.red);
         add(tempid);
 
+        try {
+            conn c = new conn();
+            String query = "SELECT * FROM employee WHERE empId = '"+number+"' ";
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         add = new JButton("ADD");
         add.setBounds(250,530,150,30);
         add.setBackground(new Color(40,167,69));
@@ -145,6 +152,6 @@ public class UpdateEmployee extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new UpdateEmployee();
+        new UpdateEmployee("");
     }
 }
