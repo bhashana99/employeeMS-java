@@ -92,6 +92,12 @@ public class ViewEmployee extends JFrame implements ActionListener {
                 E.printStackTrace();
 
             }
+        } else if (e.getSource() == print) {
+            try {
+                table.print();
+            }catch (Exception E){
+                E.printStackTrace();
+            }
         }
     }
 
