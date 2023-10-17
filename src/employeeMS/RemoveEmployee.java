@@ -100,12 +100,14 @@ public class RemoveEmployee extends JFrame implements ActionListener {
         delete.setBounds(80,300,100,30);
         delete.setBackground(Color.black);
         delete.setForeground(Color.WHITE);
+        delete.addActionListener(this);
         add(delete);
 
         back = new JButton("Back");
         back.setBounds(200,300,100,30);
         back.setBackground(Color.black);
         back.setForeground(Color.WHITE);
+        back.addActionListener(this);
         add(back);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/delete.png"));
@@ -130,7 +132,21 @@ public class RemoveEmployee extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        if (e.getSource()==delete){
+            try {
+                conn c = new conn();
+                String query = "DELETE FROM employee WHERE empId = '"+choiceEMPID.getSelectedItem()+"'";
+                c.stmt.executeUpdate(query);
+                JOptionPane.showMessageDialog(null,"Employee Deleted Sucessfully");
+                setVisible(false);
+                new Main_class();
+
+            }catch (Exception E){
+                E.printStackTrace();
+            }
+        }else {
+            setVisible(false);
+        }
     }
 
     public static void main(String[] args) {

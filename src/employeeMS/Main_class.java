@@ -57,7 +57,7 @@ public class Main_class extends JFrame {
         remove.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                new RemoveEmployee();
             }
         });
         image2.add(remove);
