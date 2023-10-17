@@ -106,6 +106,20 @@ public class RemoveEmployee extends JFrame {
         back.setForeground(Color.WHITE);
         add(back);
 
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/delete.png"));
+        Image i2 = i1.getImage().getScaledInstance(200,200,Image.SCALE_DEFAULT);
+        ImageIcon i3 = new ImageIcon(i2);
+        JLabel img = new JLabel(i3);
+        img.setBounds(700,80,200,200);
+        add(img);
+
+        ImageIcon i11 = new ImageIcon(ClassLoader.getSystemResource("icons/rback.png"));
+        Image i22 = i11.getImage().getScaledInstance(1120,630,Image.SCALE_DEFAULT);
+        ImageIcon i33 = new ImageIcon(i22);
+        JLabel image = new JLabel(i33);
+        image.setBounds(0,0,1120,630);
+        add(image);
+
         setSize(1000,400);
         setLocation(300,150);
         setLayout(null);
