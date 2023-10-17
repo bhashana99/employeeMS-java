@@ -98,6 +98,10 @@ public class ViewEmployee extends JFrame implements ActionListener {
             }catch (Exception E){
                 E.printStackTrace();
             }
+        } else if (e.getSource() == update) {
+            setVisible(false);
+        }else {
+            setVisible(false);
         }
     }
 
