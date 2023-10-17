@@ -36,6 +36,7 @@ public class ViewEmployee extends JFrame {
             conn c = new conn();
             ResultSet resultSet = c.stmt.executeQuery("SELECT * FROM employee");
             
+
         }catch (Exception e){
             e.printStackTrace();
         }
