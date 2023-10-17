@@ -2,11 +2,13 @@ package employeeMS;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.sql.ResultSet;
 
-public class RemoveEmployee extends JFrame {
+public class RemoveEmployee extends JFrame implements ActionListener {
 
     Choice choiceEMPID;
     JButton delete,back;
@@ -124,6 +126,11 @@ public class RemoveEmployee extends JFrame {
         setLocation(300,150);
         setLayout(null);
         setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
     }
 
     public static void main(String[] args) {
