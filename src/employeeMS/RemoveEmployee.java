@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 public class RemoveEmployee extends JFrame {
 
     Choice choiceEMPID;
+    JButton delete,back;
     RemoveEmployee(){
 
         JLabel label = new JLabel("Employee ID");
@@ -92,6 +93,18 @@ public class RemoveEmployee extends JFrame {
                 }
             }
         });
+
+        delete = new JButton("Delete");
+        delete.setBounds(80,300,100,30);
+        delete.setBackground(Color.black);
+        delete.setForeground(Color.WHITE);
+        add(delete);
+
+        back = new JButton("Back");
+        back.setBounds(200,300,100,30);
+        back.setBackground(Color.black);
+        back.setForeground(Color.WHITE);
+        add(back);
 
         setSize(1000,400);
         setLocation(300,150);
