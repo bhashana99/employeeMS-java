@@ -54,14 +54,17 @@ public class ViewEmployee extends JFrame implements ActionListener {
 
         search = new JButton("Search");
         search.setBounds(20,70,80,20);
+        search.addActionListener(this);
         add(search);
 
         update = new JButton("Update");
         update.setBounds(120,70,80,20);
+        update.addActionListener(this);
         add(update);
 
         print = new JButton("Print");
         print.setBounds(220,70,80,20);
+        print.addActionListener(this);
         add(print);
 
         back = new JButton("Back");
@@ -79,7 +82,7 @@ public class ViewEmployee extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
     }
 
     public static void main(String[] args) {
