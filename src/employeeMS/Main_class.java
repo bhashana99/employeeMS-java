@@ -43,7 +43,8 @@ public class Main_class extends JFrame {
         view.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                setVisible(false);
+                new ViewEmployee();
             }
         });
         image2.add(view);
