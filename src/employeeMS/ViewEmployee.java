@@ -82,7 +82,17 @@ public class ViewEmployee extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == search){
+            String query = "SELECT * FROM employee WHERE empId = '"+choiceEMP.getSelectedItem()+"' ";
+            try {
+                conn c = new conn();
+                ResultSet resultSet = c.stmt.executeQuery(query);
+                table.setModel(DbUtils.resultSetToTableModel(resultSet));
+            }catch (Exception E){
+                E.printStackTrace();
 
+            }
+        }
     }
 
     public static void main(String[] args) {
