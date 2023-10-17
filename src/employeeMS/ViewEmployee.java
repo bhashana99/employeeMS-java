@@ -7,18 +7,19 @@ import java.awt.*;
 import java.sql.ResultSet;
 
 public class ViewEmployee extends JFrame {
+    JButton search,print,update,back;
     Choice choiceEMP;
     JTable table;
-    JButton search,print,update,back;
-    
+
+
 
     ViewEmployee(){
 
         getContentPane().setBackground(new Color(230,230,230));
 
-        JLabel search = new JLabel("Search Employee By Id");
-        search.setBounds(20,20,150,20);
-        add(search);
+        JLabel searchLabel = new JLabel("Search Employee By Id");
+        searchLabel.setBounds(20,20,150,20);
+        add(searchLabel);
 
         choiceEMP = new Choice();
         choiceEMP.setBounds(180,20,150,20);
@@ -48,6 +49,10 @@ public class ViewEmployee extends JFrame {
         JScrollPane jp = new JScrollPane(table);
         jp.setBounds(0,100,900,600);
         add(jp);
+
+        JButton search = new JButton();
+
+
 
         setSize(900,700);
         setLayout(null);
