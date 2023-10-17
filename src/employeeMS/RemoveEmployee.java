@@ -23,12 +23,38 @@ public class RemoveEmployee extends JFrame {
             ResultSet resultSet = c.stmt.executeQuery("SELECT * FROM employee");
             while (resultSet.next()){
                 choiceEmpId.add(resultSet.getString("empId"));
-                
+
             }
         }catch (Exception e){
             e.printStackTrace();
         }
 
+        JLabel labelName = new JLabel("Name");
+        labelName.setBounds(50,100,100,30);
+        labelName.setFont(new Font("Tahoma",Font.BOLD,15));
+        add(labelName);
+
+        JLabel textName = new JLabel();
+        textName.setBounds(250,100,100,30);
+        add(textName);
+
+        JLabel labelPhone = new JLabel("Phone");
+        labelPhone.setBounds(50,150,100,30);
+        labelPhone.setFont(new Font("Tahoma",Font.BOLD,15));
+        add(labelPhone);
+
+        JLabel textPhone = new JLabel();
+        textPhone.setBounds(250,150,100,30);
+        add(textPhone);
+
+        JLabel labelEmail = new JLabel("E-Mail");
+        labelEmail.setBounds(50,200,100,30);
+        labelEmail.setFont(new Font("Tahoma",Font.BOLD,15));
+        add(labelEmail);
+
+        JLabel textEmail = new JLabel();
+        textEmail.setBounds(250,200,100,30);
+        add(textEmail);
 
         setSize(1000,400);
         setLocation(300,150);
