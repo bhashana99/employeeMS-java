@@ -43,6 +43,10 @@ public class ViewEmployee extends JFrame {
             e.printStackTrace();
         }
 
+        JScrollPane jp = new JScrollPane(table);
+        jp.setBounds(0,100,900,600);
+        add(jp);
+
         setSize(900,700);
         setLayout(null);
         setLocation(300,100);
