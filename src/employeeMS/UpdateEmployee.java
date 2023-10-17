@@ -11,8 +11,8 @@ import java.sql.ResultSet;
 public class UpdateEmployee extends JFrame implements ActionListener {
 
     JTextField taddress,tphone,temail,tsalary,teducation;
-    JLabel tempid;
-    JButton add,back;
+    JLabel tempid,tname,tnic,tdob;
+    JButton update,back;
     String number;
 
     UpdateEmployee(String number){
@@ -31,7 +31,7 @@ public class UpdateEmployee extends JFrame implements ActionListener {
         name.setFont(new Font("SAN_SERIF",Font.BOLD,20));
         add(name);
 
-        JLabel tname = new JLabel();
+        tname = new JLabel();
         tname.setBounds(380,120,250,30);
         tname.setBackground(new Color(240, 240, 240));
         add(tname);
@@ -81,7 +81,7 @@ public class UpdateEmployee extends JFrame implements ActionListener {
         dob.setFont(new Font("SAN_SERIF",Font.BOLD,20));
         add(dob);
 
-        JLabel tdob = new JLabel();
+        tdob = new JLabel();
         tdob.setBounds(380,320,150,30);
         dob.setFont(new Font("Tahoma",Font.BOLD,20));
         add(tdob);
@@ -102,7 +102,7 @@ public class UpdateEmployee extends JFrame implements ActionListener {
         nic.setFont(new Font("SAN_SERIF",Font.BOLD,20));
         add(nic);
 
-        JLabel tnic = new JLabel();
+        tnic = new JLabel();
         tnic.setBounds(380,400,250,30);
         tnic.setBackground(new Color(240, 240, 240));
         add(tnic);
@@ -136,12 +136,12 @@ public class UpdateEmployee extends JFrame implements ActionListener {
             e.printStackTrace();
         }
 
-        add = new JButton("ADD");
-        add.setBounds(250,530,150,30);
-        add.setBackground(new Color(40,167,69));
-        add.setForeground(Color.WHITE);
-        add.addActionListener(this);
-        add(add);
+        update = new JButton("Update");
+        update.setBounds(250,530,150,30);
+        update.setBackground(new Color(40,167,69));
+        update.setForeground(Color.WHITE);
+        update.addActionListener(this);
+        add(update);
 
         back = new JButton("Back");
         back.setBounds(550,530,150,30);
@@ -161,7 +161,38 @@ public class UpdateEmployee extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        if(e.getSource() == update){
+            String name = tname.getText();
+            String address = taddress.getText();
+            String phone = tphone.getText();
+            String email = temail.getText();
+            String salary = tsalary.getText();
+            String nic = tnic.getText();
+            String dob = tdob.getText();
+            String education = teducation.getText();
+
+
+            try{
+                conn c = new conn();
+
+                String query = "UPDATE employee SET name='"+name+"', address = '"+address+"', phone = '"+phone+"', email = '"+email+"',salary = '"+salary+"', nic = '"+nic+"', dob = '"+dob+"',education = '"+education+"' WHERE empId = '"+number+"' ";
+                c.stmt.executeUpdate(query);
+                JOptionPane.showMessageDialog(null,"Details Updated successfully");
+                setVisible(false);
+                new Main_class();
+
+            }catch (Exception E){
+                E.printStackTrace();
+            }
+        } else if (e.getSource() == back) {
+            setVisible(false);
+            new Main_class();
+
+        }
+
     }
+
+
 
     public static void main(String[] args) {
         new UpdateEmployee("");
