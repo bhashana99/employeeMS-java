@@ -9,6 +9,8 @@ import java.sql.ResultSet;
 public class ViewEmployee extends JFrame {
     Choice choiceEMP;
     JTable table;
+    JButton search,print,update,back;
+    
 
     ViewEmployee(){
 
