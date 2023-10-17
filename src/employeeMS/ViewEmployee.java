@@ -1,5 +1,7 @@
 package employeeMS;
 
+import net.proteanit.sql.DbUtils;
+
 import javax.swing.*;
 import java.awt.*;
 import java.sql.ResultSet;
@@ -35,7 +37,7 @@ public class ViewEmployee extends JFrame {
         try{
             conn c = new conn();
             ResultSet resultSet = c.stmt.executeQuery("SELECT * FROM employee");
-            
+            table.setModel(DbUtils.resultSetToTableModel(resultSet));
 
         }catch (Exception e){
             e.printStackTrace();
