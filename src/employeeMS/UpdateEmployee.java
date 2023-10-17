@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 
 public class UpdateEmployee extends JFrame implements ActionListener {
 
@@ -120,6 +121,10 @@ public class UpdateEmployee extends JFrame implements ActionListener {
         try {
             conn c = new conn();
             String query = "SELECT * FROM employee WHERE empId = '"+number+"' ";
+            ResultSet resultSet = c.stmt.executeQuery(query);
+            while (resultSet.next()){
+                tname.setText(resultSet.getString("name"));
+            }
         }catch (Exception e){
             e.printStackTrace();
         }
