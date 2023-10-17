@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 
 public class ViewEmployee extends JFrame {
     Choice choiceEMP;
+    JTable table;
 
     ViewEmployee(){
 
@@ -26,6 +27,15 @@ public class ViewEmployee extends JFrame {
                 choiceEMP.add(resultSet.getString("empId"));
             }
 
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        table = new JTable();
+        try{
+            conn c = new conn();
+            ResultSet resultSet = c.stmt.executeQuery("SELECT * FROM employee");
+            
         }catch (Exception e){
             e.printStackTrace();
         }
